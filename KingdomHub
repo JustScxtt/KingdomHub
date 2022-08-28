@@ -1,0 +1,21 @@
+game:GetService("RunService").Stepped:connect(function()
+    while true do
+        local args = {
+            [1] = "collectOrb",
+            [2] = "Blue Orb",
+            [3] = "City"
+        }
+        
+        game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+    wait()
+    end   
+    
+    while true do
+        local args = {
+        [1] = "rebirthRequest"
+    }
+    
+    game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer(unpack(args))
+    wait()
+    end
+    end)
