@@ -1,0 +1,31 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Kingdom Hub Notice";
+    Text = "More Scripts Coming Soon.";
+    Duration = 10;
+})
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "[DISCORD]";
+    Text = "https://discord.gg/JwVw4UuDat";
+    Duration = 10;
+})
+
+
+if setclipboard then
+    setclipboard("https://discord.gg/JwVw4UuDat")
+end
+
+--settings (make these values bigger if script often bugs for you)
+local delay1 = 1
+local delay2 = 0.1
+--main
+while task.wait() do
+    pcall(function()
+        for i,v in pairs(workspace.Environment:GetDescendants()) do
+            if v:FindFirstChildWhichIsA'TouchTransmitter' then
+                firetouchinterest(v, game:service'Players'.LocalPlayer.Character.HumanoidRootPart, 0)
+                task.wait((v.Parent.Name == 'Stage1K' and delay1) or delay2)
+            end
+        end
+    end)
+end
